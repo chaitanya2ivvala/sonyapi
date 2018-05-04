@@ -7,5 +7,5 @@ if (!process.env.DEVICE_IP) {
 
 const api = new Api(`http://${process.env.DEVICE_IP}:54480/sony`);
 
-var vol = process.ARGV[2];
+var vol = process.argv[2];
 api.setVolume(vol);
