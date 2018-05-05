@@ -1,0 +1,35 @@
+#!/bin/bash
+if [ "$1" = "off" ];
+then
+DEVICE_IP=192.168.0.13 node poweroff.js
+fi
+if [ "$1" = "on" ];
+then
+DEVICE_IP=192.168.0.13 node poweron.js
+fi
+if [ "$1" = "mute" ];
+then
+DEVICE_IP=192.168.0.13 node mute.js
+fi
+if [ "$1" = "unmute" ];
+then
+DEVICE_IP=192.168.0.13 node unmute.js
+fi
+if [ "$1" = "vol" ];
+then
+DEVICE_IP=192.168.0.13 node poweroff.js $2
+fi
+if [ "$1" = "notify" ];
+then
+python quickstart.py
+fi
+if [ "$1" = "help" ];
+then
+echo "usage"
+echo "on - to on the device ./index on"
+echo "off - to off the device ./index off"
+echo "mute - to mute the device ./index mute"
+echo "unmute - to unmute the device ./index unmute"
+echo "vol - to control the volume ./index vol <value>"
+echo "notify to use notifiction functionality ./index notify"
+fi
