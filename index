@@ -23,6 +23,10 @@ if [ "$1" = "notify" ];
 then
 python quickstart.py
 fi
+if [ "$1" = "info" ];
+then
+nanodlna list
+fi
 if [ "$1" = "help" ];
 then
 echo "usage"
