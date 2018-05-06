@@ -5,14 +5,6 @@ from oauth2client import file, client, tools
 import datetime
 from gtts import gTTS
 import os
-import sys
-import multiprocessing
-import time
-
-from pynput.keyboard import Key, Controller
-keyboard = Controller()
-
-
 SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
 store = file.Storage('credentials.json')
 creds = store.get()
@@ -29,47 +21,11 @@ if not events:
     tmp='No upcoming events found.'
     tts = gTTS(text=tmp, lang='en')
     tts.save("tmp.mp3")
-    def foo2(n):
-        os.system('dlnast tmp.mp3')
-    
-    if __name__ == '__main__':
-	    # Start foo as a process
-	    p = multiprocessing.Process(target=foo2, name="Foo2", args=(10,))
-	    p.start()
-
-	    # Wait 10 seconds for foo
-	    time.sleep(10)
-	    #print ("q")
-	    keyboard.press('q')
-	    time.sleep(10)
-
-	    # Terminate foo
-	    p.terminate()
-
-	    # Cleanup
-	    p.join()
-	    #os.system("mpg123 tmp.mp3")
+    os.system("mpg123 tmp.mp3")
 for event in events:
     start = event['start'].get('dateTime', event['start'].get('date'))
     tmp="you have an event on"+ " "+ str(event['summary']) + " at " +str(start)
     print(tmp)
     tts = gTTS(text=tmp, lang='en')
     tts.save("tmp.mp3")
-    def foo(n):
-        os.system('dlnast tmp.mp3')
-    if __name__ == '__main__':
-	    # Start foo as a process
-	    p = multiprocessing.Process(target=foo, name="Foo", args=(10,))
-	    p.start()
-
-	    # Wait 10 seconds for foo
-	    time.sleep(10)
-	    print ("q")
-	    keyboard.press('q')
-	    time.sleep(10)
-
-	    # Terminate foo
-	    p.terminate()
-
-	    # Cleanup
-	    p.join()
+    os.system("mpg123 tmp.mp3")
