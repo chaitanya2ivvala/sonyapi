@@ -17,13 +17,13 @@ DEVICE_IP=$1 node unmute.js
 fi
 if [ "$2" = "vol" ];
 then
-DEVICE_IP=$1 node poweroff.js $3
+DEVICE_IP=$1 node volume.js $3
 fi
-if [ "$2" = "notify" ];
+if [ "$1" = "notify" ];
 then
 python quickstart.py
 fi
-if [ "$2" = "help" ];
+if [ "$1" = "help" ];
 then
 echo "usage"
 echo "on - to on the device ./index <ipaddress> on"
