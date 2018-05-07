@@ -27,9 +27,15 @@ if [ "$1" = "info" ];
 then
 nanodlna list
 fi
+if [ "$1" = "play" ];
+then 
+python play.py
+fi
 if [ "$1" = "help" ];
 then
 echo "usage"
+echo "info - to get the info of api ./index info"
+echo "play - to play the song ./index play"
 echo "on - to on the device ./index <ipaddress> on"
 echo "off - to off the device ./index <ipaddress> off"
 echo "mute - to mute the device ./index <ipaddress> mute"
