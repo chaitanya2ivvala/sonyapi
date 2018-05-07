@@ -1,9 +1,15 @@
 Smart connect using Sony Audio Control API.<br />
+============= 
 Introduction<br />
+--------------- 
 Developed smart connect notification system through sony speakers using sony audio control API, Integrated with the Google calender and developed the music control system.<br />
+######
 Installation<br />
+------------------
 clone the repository <br />
+######
 Usage<br />
+--------------- 
 device info - ./index info - to get the device info.<br />
 notify - ./index notify - to get the notifcations from google calender to the device.<br />
 play - ./index play - to play a song from a media server.<br />
